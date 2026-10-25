@@ -224,14 +224,21 @@ Please confirm my order and delivery charges.`;
         </nav>
 
         <button
-          className="nav-order"
-          onClick={() => {
-            setShowCart(true);
-            setCheckout(false);
-          }}
-        >
-          🛍️ Cart ({cartCount})
-        </button>
+  className="nav-order"
+  onClick={() => {
+    setShowCart(true);
+    setCheckout(false);
+
+    setTimeout(() => {
+      document.getElementById("cart")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
+  }}
+>
+  🛍️ Cart ({cartCount})
+</button>
       </header>
 
       <main>
